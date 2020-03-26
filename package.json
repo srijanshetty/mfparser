@@ -1,0 +1,93 @@
+{
+  "name": "mfparser",
+  "version": "1.0.0",
+  "description": "Parser for CAMS/Karvy CAS PDF",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "bin": {
+    "mfparser": "index.js"
+  },
+  "keywords": [
+    "India",
+    "Indian Mutual Funds",
+    "MFs",
+    "karvy",
+    "Considated Account Statment",
+    "CAS Parser",
+    "CAS PDF"
+  ],
+  "dependencies": {
+    "pdf2json": "github:srijanshetty/pdf2json#master"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.2.0",
+    "@types/node": "^13.9.4",
+    "@typescript-eslint/eslint-plugin": "^2.25.0",
+    "@typescript-eslint/parser": "^2.25.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-plugin-prettier": "^3.1.2",
+    "husky": "^3.1.0",
+    "prettier": "^1.19.1",
+    "ts-node": "^8.8.1",
+    "typescript": "^3.8.3"
+  },
+  "author": "Srijan R Shetty",
+  "private": true,
+  "eslintConfig": {
+    "env": {
+      "es6": true,
+      "node": true
+    },
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+      "@typescript-eslint"
+    ],
+    "extends": [
+      "plugin:@typescript-eslint/recommended",
+      "prettier/@typescript-eslint",
+      "plugin:prettier/recommended"
+    ],
+    "parserOptions": {
+      "ecmaVersion": 2018,
+      "sourceType": "commonjs"
+    },
+    "rules": {
+      "@typescript-eslint/explicit-function-return-type": 0
+    }
+  },
+  "prettier": {
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es6"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ],
+    "rules": {
+      "type-enum": [
+        1,
+        "always",
+        [
+          "build",
+          "chore",
+          "docs",
+          "feat",
+          "fix",
+          "lint",
+          "refactor",
+          "revert"
+        ]
+      ]
+    }
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  }
+}
